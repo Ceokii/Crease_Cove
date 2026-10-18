@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#37474f"/>
+    </marker>
+    <style>
+      .m{fill:#fff3e0;stroke:#fb8c00;stroke-width:1.2;rx:6}
+      .a{fill:#e3f2fd;stroke:#1e88e5;stroke-width:1.2;rx:6}
+      .g{fill:#ffebee;stroke:#e53935;stroke-width:1.4;rx:6}
+      .t{fill:#263238}
+      .s{fill:#546e7a;font-size:11px}
+      .ln{stroke:#37474f;stroke-width:1.4;fill:none;marker-end:url(#ar)}
+      .lb{fill:#c62828;font-size:11px}
+    </style>
+  </defs>
+  <text x="500" y="26" text-anchor="middle" font-size="17" font-weight="bold" class="t">Производственный конвейер ассета: ручные шаги, скрипты и контрольные ворота</text>
+
+  <rect class="m" x="20" y="50" width="170" height="64"/><text class="t" x="30" y="74">1. Бриф ассета</text><text class="s" x="30" y="92">габариты, референсы,</text><text class="s" x="30" y="106">категория, варианты</text>
+  <rect class="m" x="210" y="50" width="170" height="64"/><text class="t" x="220" y="74">2. Геометрия</text><text class="s" x="220" y="92">Blender (+ ИИ-помощь),</text><text class="s" x="220" y="106">масштаб, pivot, имена</text>
+  <rect class="m" x="400" y="50" width="170" height="64"/><text class="t" x="410" y="74">3. UV и материалы</text><text class="s" x="410" y="92">PBR, варианты,</text><text class="s" x="410" y="106">процедурные ноды</text>
+  <rect class="a" x="590" y="50" width="180" height="64"/><text class="t" x="600" y="74">4. Автопроверка сцены</text><text class="s" x="600" y="92">единицы, трансформации,</text><text class="s" x="600" y="106">нормали, UV, текстуры</text>
+  <rect class="g" x="790" y="50" width="190" height="64"/><text class="t" x="800" y="74">Ворота A</text><text class="s" x="800" y="92">ошибки → возврат</text><text class="s" x="800" y="106">к шагам 2–3</text>
+
+  <rect class="a" x="790" y="160" width="190" height="64"/><text class="t" x="800" y="184">5. Запекание</text><text class="s" x="800" y="202">процедурные эффекты</text><text class="s" x="800" y="216">→ текстуры PBR</text>
+  <rect class="a" x="590" y="160" width="180" height="64"/><text class="t" x="600" y="184">6. Экспорт</text><text class="s" x="600" y="202">BLEND, GLB (варианты),</text><text class="s" x="600" y="216">FBX — по пресетам</text>
+  <rect class="a" x="400" y="160" width="170" height="64"/><text class="t" x="410" y="184">7. Проверка файлов</text><text class="s" x="410" y="202">glTF Validator, реимпорт,</text><text class="s" x="410" y="216">сравнение габаритов</text>
+  <rect class="m" x="210" y="160" width="170" height="64"/><text class="t" x="220" y="184">8. Ручной осмотр</text><text class="s" x="220" y="202">рендеры, импорт в</text><text class="s" x="220" y="216">целевые программы</text>
+  <rect class="g" x="20" y="160" width="170" height="64"/><text class="t" x="30" y="184">Ворота B</text><text class="s" x="30" y="202">чек-лист качества</text><text class="s" x="30" y="216">и лицензий</text>
+
+  <rect class="a" x="20" y="270" width="170" height="64"/><text class="t" x="30" y="294">9. Упаковка</text><text class="s" x="30" y="312">ZIP по форматам,</text><text class="s" x="30" y="326">README, LICENSE</text>
+  <rect class="a" x="210" y="270" width="170" height="64"/><text class="t" x="220" y="294">10. Манифест</text><text class="s" x="220" y="312">метаданные, хэши,</text><text class="s" x="220" y="326">происхождение</text>
+  <rect class="a" x="400" y="270" width="170" height="64"/><text class="t" x="410" y="294">11. Загрузка в R2</text><text class="s" x="410" y="312">неизменяемые пути</text><text class="s" x="410" y="326">с версией</text>
+  <rect class="g" x="590" y="270" width="180" height="64"/><text class="t" x="600" y="294">Ворота C</text><text class="s" x="600" y="312">проверка ссылок и хэшей</text><text class="s" x="600" y="326">на staging</text>
+  <rect class="m" x="790" y="270" width="190" height="64"/><text class="t" x="800" y="294">12. Публикация</text><text class="s" x="800" y="312">Pull Request с манифестом,</text><text class="s" x="800" y="326">одобрение владельцем</text>
+
+  <path class="ln" d="M190,82 L210,82"/><path class="ln" d="M380,82 L400,82"/><path class="ln" d="M570,82 L590,82"/><path class="ln" d="M770,82 L790,82"/>
+  <path class="ln" d="M885,114 L885,160"/>
+  <path class="ln" d="M790,192 L770,192"/><path class="ln" d="M590,192 L570,192"/><path class="ln" d="M400,192 L380,192"/><path class="ln" d="M210,192 L190,192"/>
+  <path class="ln" d="M105,224 L105,270"/>
+  <path class="ln" d="M190,302 L210,302"/><path class="ln" d="M380,302 L400,302"/><path class="ln" d="M570,302 L590,302"/><path class="ln" d="M770,302 L790,302"/>
+
+  <rect class="m" x="20" y="362" width="18" height="14"/><text class="s" x="44" y="374">ручная работа владельца (с помощью ИИ)</text>
+  <rect class="a" x="330" y="362" width="18" height="14"/><text class="s" x="354" y="374">шаг, который выполняет скрипт</text>
+  <rect class="g" x="580" y="362" width="18" height="14"/><text class="s" x="604" y="374">контрольные ворота: без прохождения ассет не идёт дальше</text>
+  <text class="s" x="20" y="400">Скрипты не заменяют осмотр: они ловят формальные ошибки, а внешний вид и удобство использования проверяет человек.</text>
+</svg>
