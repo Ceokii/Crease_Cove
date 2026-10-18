@@ -1,0 +1,28 @@
+---
+/**
+ * Пометка «Черновик» для служебных и правовых страниц (ТЗ, FR-20).
+ */
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<p class="draft-notice" data-draft-notice>
+  <strong>{t.draft.badge}.</strong>{' '}
+  {t.draft.legalText}
+</p>
+
+<style>
+  .draft-notice {
+    padding: var(--space-3) var(--space-4);
+    border-left: 4px solid var(--color-border);
+    background: var(--color-note-bg);
+    color: var(--color-note-text);
+    font-size: var(--text-sm);
+  }
+</style>

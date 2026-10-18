@@ -1,0 +1,31 @@
+{
+  "name": "crease-cove-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Crease Cove: локальный прототип сайта на тестовых данных (этап 1).",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "postinstall": "astro telemetry disable",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "demo": "npm run build && npm run preview",
+    "check": "astro check",
+    "links": "linkinator dist --recurse --verbosity error",
+    "test:e2e": "playwright test",
+    "check-all": "npm run check && npm run build && npm run links && npm run test:e2e"
+  },
+  "dependencies": {
+    "astro": "7.4.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@playwright/test": "1.64.1",
+    "linkinator": "8.1.0",
+    "typescript": "6.0.3"
+  }
+}

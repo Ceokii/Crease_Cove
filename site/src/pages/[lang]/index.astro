@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import { localeStaticPaths, useTranslations, type Locale } from '../../i18n';
+
+export const getStaticPaths = localeStaticPaths;
+
+const locale = Astro.params.lang as Locale;
+const t = useTranslations(locale);
+const page = t.pages.home;
+---
+
+<BaseLayout locale={locale} title={page.title}>
+  <h1>{page.heading}</h1>
+  <p class="lead">{page.lead}</p>
+
+  <section id="categories" aria-labelledby="categories-heading">
+    <h2 id="categories-heading">{page.categoriesHeading}</h2>
+    <Placeholder locale={locale} step="1.4" />
+  </section>
+
+  <section aria-labelledby="new-heading">
+    <h2 id="new-heading">{page.newHeading}</h2>
+    <Placeholder locale={locale} step="1.4" />
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    max-width: 48rem;
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+  }
+
+  section {
+    margin-top: var(--space-8);
+  }
+</style>

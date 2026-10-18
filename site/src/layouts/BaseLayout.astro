@@ -1,0 +1,64 @@
+---
+/**
+ * Общий макет всех страниц: язык документа, заголовок вкладки с пометкой
+ * тестовых данных, баннер, шапка, основное содержимое и подвал.
+ */
+import '../styles/global.css';
+import TestBanner from '../components/TestBanner.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { LOCALES, switchLocalePath, useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  /** Название страницы без названия сайта. */
+  title: string;
+  description?: string;
+  /** false — не выводить ссылки на другие языки и переключатель (страница 404). */
+  alternates?: boolean;
+}
+
+const { locale, title, description, alternates = true } = Astro.props;
+const t = useTranslations(locale);
+const pageTitle = `${t.site.testTitlePrefix} ${title} — ${t.site.name}`;
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description ?? t.site.tagline} />
+    <!-- Прототип не предназначен для поисковых систем -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {
+      alternates &&
+        LOCALES.map((code) => (
+          <link rel="alternate" hreflang={code} href={switchLocalePath(pathname, code)} />
+        ))
+    }
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.a11y.skipToContent}</a>
+    <TestBanner locale={locale} />
+    <Header locale={locale} showLanguageSwitcher={alternates} />
+    <main id="main" class="container" tabindex="-1">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>
+
+<style>
+  main {
+    padding-block: var(--space-8);
+  }
+
+  main:focus {
+    outline: none;
+  }
+</style>

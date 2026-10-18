@@ -1,0 +1,49 @@
+---
+/**
+ * Переключатель языка (ТЗ, FR-25): ведёт на ту же страницу на другом языке.
+ */
+import { LOCALES, LOCALE_NAMES, switchLocalePath, useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const pathname = Astro.url.pathname;
+---
+
+<nav class="lang-switcher" aria-label={t.a11y.languageSwitcher} data-lang-switcher>
+  <ul>
+    {
+      LOCALES.map((code) => (
+        <li>
+          {code === locale ? (
+            <span aria-current="true" lang={code}>
+              {LOCALE_NAMES[code]}
+            </span>
+          ) : (
+            <a href={switchLocalePath(pathname, code)} hreflang={code} lang={code} data-lang-link={code}>
+              {LOCALE_NAMES[code]}
+            </a>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .lang-switcher ul {
+    display: flex;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--text-sm);
+  }
+
+  .lang-switcher [aria-current] {
+    font-weight: 600;
+  }
+</style>

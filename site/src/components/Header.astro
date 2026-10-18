@@ -1,0 +1,87 @@
+---
+/**
+ * Шапка сайта: название, основная навигация, переключатель языка.
+ */
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { localizedPath, useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  /** false — скрыть переключатель языка (страница 404 уже на двух языках). */
+  showLanguageSwitcher?: boolean;
+}
+
+const { locale, showLanguageSwitcher = true } = Astro.props;
+const t = useTranslations(locale);
+
+const links = [
+  { href: localizedPath(locale, 'catalog/'), label: t.nav.catalog },
+  // Отдельной страницы категорий в ТЗ нет: ссылка ведёт к блоку категорий на главной.
+  { href: localizedPath(locale, '#categories'), label: t.nav.categories },
+  { href: localizedPath(locale, 'search/'), label: t.nav.search },
+  { href: localizedPath(locale, 'license/'), label: t.nav.license },
+];
+
+const current = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__logo" href={localizedPath(locale)} aria-label={t.a11y.homeLink}>
+      {t.site.name}
+    </a>
+    <nav aria-label={t.a11y.mainNav}>
+      <ul class="site-header__nav">
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href} aria-current={current === link.href ? 'page' : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    {showLanguageSwitcher && <LanguageSwitcher locale={locale} />}
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+
+  .site-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3) var(--space-6);
+    padding-block: var(--space-4);
+  }
+
+  .site-header__logo {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  nav {
+    flex: 1;
+  }
+
+  .site-header__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-header__nav a[aria-current='page'] {
+    font-weight: 600;
+  }
+</style>
