@@ -18,7 +18,7 @@
       .lab{fill:#37474f;font-size:11px}
     </style>
   </defs>
-  <text x="500" y="26" text-anchor="middle" font-size="17" font-weight="bold" class="t">Crease Cove — рекомендуемая архитектура (этапы 1–2)</text>
+  <text x="500" y="26" text-anchor="middle" font-size="17" font-weight="bold" class="t">Crease Cove — возможная архитектура публичной версии (не утверждена)</text>
 
   <!-- Owner workstation -->
   <rect class="zone" x="20" y="48" width="300" height="420"/>
@@ -63,7 +63,7 @@
   <text class="s" x="378" y="460">свой домен + кэш CDN</text>
   <rect class="boxd" x="366" y="488" width="122" height="58"/>
   <text class="t" x="374" y="510">D1</text>
-  <text class="s" x="374" y="528">индекс (этап 2)</text>
+  <text class="s" x="374" y="528">индекс (позже)</text>
   <rect class="boxd" x="498" y="488" width="126" height="58"/>
   <text class="t" x="506" y="510">WAF / Access</text>
   <text class="s" x="506" y="528">лимиты, админка</text>
@@ -115,6 +115,6 @@
   <text class="t" x="698" y="487">Скачивание выбранного пакета</text>
   <text class="s" x="20" y="630">1 — манифест ассета попадает в Git (через Pull Request); 2 — скрипт загружает пакеты, GLB и превью в R2; 3 — CI собирает и выкладывает сайт;</text>
   <text class="s" x="20" y="648">4 — браузер получает страницы; 5 — скачивание идёт через Worker (учёт, лимиты), 3D-превью и картинки — напрямую из R2 через CDN; 6 — резерв.</text>
-  <text class="s" x="20" y="666">Сплошные линии — обязательные потоки этапа 1; пунктир — компоненты и потоки, добавляемые по мере роста (этап 2).</text>
-  <text class="s" x="20" y="684">Администрирование на этапе 1: публикация через Git и скрипты, без отдельной веб-админки.</text>
+  <text class="s" x="20" y="666">Схема относится к возможной публичной версии (этап 4). Пунктир — компоненты, добавляемые только по мере роста.</text>
+  <text class="s" x="20" y="684">Локальный прототип (этап 1) не использует облако: только Astro, Pagefind и тестовые файлы на компьютере.</text>
 </svg>
