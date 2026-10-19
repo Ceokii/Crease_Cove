@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import DraftNotice from '../../../components/DraftNotice.astro';
+import { localeStaticPaths, useTranslations, type Locale } from '../../../i18n';
+
+export const getStaticPaths = localeStaticPaths;
+
+const locale = Astro.params.lang as Locale;
+const page = useTranslations(locale).pages.privacy;
+---
+
+<BaseLayout locale={locale} title={page.title}>
+  <h1>{page.heading}</h1>
+  <DraftNotice locale={locale} />
+</BaseLayout>

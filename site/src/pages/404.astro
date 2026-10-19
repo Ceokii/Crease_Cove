@@ -1,0 +1,36 @@
+---
+/**
+ * Страница 404 (ТЗ, FR-21). Одна на весь сайт, поэтому текст на обоих языках.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { DEFAULT_LOCALE, LOCALES, LOCALE_NAMES, localizedPath, useTranslations } from '../i18n';
+
+const t = useTranslations(DEFAULT_LOCALE);
+---
+
+<BaseLayout locale={DEFAULT_LOCALE} title={t.pages.notFound.title} alternates={false}>
+  {
+    LOCALES.map((code) => {
+      const page = useTranslations(code).pages.notFound;
+      return (
+        <section lang={code} class="not-found">
+          <h1>{page.heading}</h1>
+          <p>{page.text}</p>
+          <p>
+            <a href={localizedPath(code)}>
+              {page.home} ({LOCALE_NAMES[code]})
+            </a>
+          </p>
+        </section>
+      );
+    })
+  }
+</BaseLayout>
+
+<style>
+  .not-found + .not-found {
+    margin-top: var(--space-8);
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+</style>

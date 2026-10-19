@@ -1,0 +1,63 @@
+{
+  "site": {
+    "name": "Crease Cove",
+    "tagline": "A free library of 3D assets",
+    "testTitlePrefix": "[TEST]"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "mainNav": "Main navigation",
+    "footerNav": "Site information",
+    "languageSwitcher": "Site language",
+    "homeLink": "Crease Cove — home"
+  },
+  "banner": {
+    "text": "Prototype with test data. These assets are not real and are not intended for use."
+  },
+  "nav": {
+    "catalog": "Catalog",
+    "categories": "Categories",
+    "search": "Search",
+    "license": "License"
+  },
+  "footer": {
+    "about": "About",
+    "quality": "Quality standard",
+    "terms": "Terms of use",
+    "privacy": "Privacy",
+    "takedown": "Copyright requests",
+    "prototypeNote": "Local prototype. The site is not published and runs only on this computer."
+  },
+  "placeholder": {
+    "badge": "Under construction",
+    "text": "The content of this page will appear in later steps of stage 1. Only the overall site skeleton is ready now.",
+    "plannedStep": "Planned: step {step} of the technical specification."
+  },
+  "draft": {
+    "badge": "Draft",
+    "legalText": "The text will be prepared before any public launch."
+  },
+  "pages": {
+    "home": {
+      "title": "Home",
+      "heading": "Crease Cove",
+      "lead": "A free library of 3D assets made in Blender with the help of AI. This is a local prototype: structure and features are being checked with synthetic test data.",
+      "categoriesHeading": "Categories",
+      "newHeading": "New assets"
+    },
+    "catalog": { "title": "Catalog", "heading": "Catalog" },
+    "search": { "title": "Search", "heading": "Search" },
+    "license": { "title": "License", "heading": "License" },
+    "quality": { "title": "Quality standard", "heading": "Quality standard" },
+    "about": { "title": "About", "heading": "About" },
+    "terms": { "title": "Terms of use", "heading": "Terms of use" },
+    "privacy": { "title": "Privacy", "heading": "Privacy policy" },
+    "takedown": { "title": "Copyright requests", "heading": "Copyright requests" },
+    "notFound": {
+      "title": "Page not found",
+      "heading": "Page not found",
+      "text": "This page does not exist. The address may contain a typo.",
+      "home": "Go to home page"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+---
+/**
+ * Баннер тестовых данных (ТЗ, FR-04 и раздел 8.5).
+ * Показывается на каждой странице, закрыть его нельзя.
+ * Атрибут data-test-banner используют автоматические проверки.
+ */
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<div class="test-banner" role="note" data-test-banner>
+  <div class="container">
+    <strong>{t.site.testTitlePrefix}</strong>{' '}
+    {t.banner.text}
+  </div>
+</div>
+
+<style>
+  .test-banner {
+    background: var(--color-test-banner-bg);
+    color: var(--color-test-banner-text);
+    border-bottom: 2px solid var(--color-test-banner-border);
+    font-size: var(--text-sm);
+    padding-block: var(--space-2);
+  }
+</style>

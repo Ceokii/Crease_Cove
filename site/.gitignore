@@ -1,0 +1,18 @@
+# Зависимости (ставятся командой npm ci)
+node_modules/
+
+# Результат сборки и служебные файлы Astro
+dist/
+.astro/
+
+# Сгенерированные тестовые файлы (пересоздаются командой npm run test-data, шаг 1.3)
+public/test-assets/
+
+# Отчёты автоматических проверок
+playwright-report/
+test-results/
+blob-report/
+
+# Локальные настройки
+.env
+.env.*

@@ -1,0 +1,19 @@
+# Единый формат окончания строк (LF) для Windows, macOS и Linux.
+# Без этого Git на Windows может менять окончания строк и показывать «изменения» там, где их нет.
+* text=auto eol=lf
+
+# Командные файлы Windows должны оставаться с CRLF
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Двоичные файлы: не изменять
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.glb binary
+*.blend binary
+*.fbx binary
